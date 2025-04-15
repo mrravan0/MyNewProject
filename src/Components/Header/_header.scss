@@ -1,0 +1,23 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.header {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--color-dark);
+
+        &-wrapper {
+            display: flex;
+            column-gap: rem(10);
+        }
+
+        &-title {
+            @include fluid-text(rem(calculate(14), 16));
+        }
+    }
+}

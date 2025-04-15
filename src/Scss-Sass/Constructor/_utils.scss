@@ -1,0 +1,23 @@
+@use '../Helpers' as *;
+
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-X) * 2);
+    padding-inline: var(--container-padding-X);
+    margin: 0 auto;
+}
+
+.visually-hidden {
+    @include visually-hidden;
+}
+
+.visible-mobile {
+    @include respond('min', $mobile) {
+        display: none !important;
+    }
+}
+
+.hidden-mobile {
+    @include respond('max', $mobile) {
+        display: none !important;
+    }
+}

@@ -1,0 +1,25 @@
+@use 'sass:math';
+
+@function calculate($value, $condition : null) {
+    $base-width: 1440px;
+    $target-width: 1920px;
+    $result: math.round(math.div($target-width, $base-width) * $value);
+
+    @if $condition =='px' {
+        @return #{$result}px;
+    }
+
+    @else {
+        @return $result;
+    }
+}
+
+@function rem($pixel) {
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16)+rem;
+    }
+
+    @else {
+        @return 'Error!'
+    }
+}
