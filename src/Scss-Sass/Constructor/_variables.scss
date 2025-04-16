@@ -9,7 +9,7 @@
     --font-family: 'Poppins', sans-serif;
     --container-width: #{rem(calculate(1170))};
     --container-padding-X: #{rem(20)};
-    --transition-duration: .4;
+    --transition-duration: .4s;
 
     @include respond('max', $laptop) {
         --container-width: #{rem(1170)};

@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import 'modern-css-reset';
+import 'the-new-css-reset/css/reset.css';
 import './Scss-Sass/Constructor/_fonts.scss';
 import './Scss-Sass/Constructor/_variables.scss';
 import './Scss-Sass/Constructor/_utils.scss';

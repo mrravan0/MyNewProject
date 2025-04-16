@@ -1,0 +1,73 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.footer {
+    background-color: var(--color-dark);
+    padding-block: rem(80) rem(25);
+    color: var(--color-light);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: var(--color-light);
+        bottom: rem(60);
+        left: 0;
+        width: 100%;
+        height: rem(2);
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        column-gap: rem(30);
+        padding-bottom: rem(80);
+
+        @include respond('max', $tablet) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            row-gap: rem(30);
+        }
+
+        @include respond('max', $mobile) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__soc1als {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(24);
+
+        @include respond('max', $mobile) {
+            align-items: center;
+        }
+
+        &-images {
+            display: flex;
+            column-gap: rem(25);
+        }
+    }
+
+    &__subtitle {
+        font-size: rem(calculate(12));
+        color: var(--color-grey);
+    }
+
+    &__images {
+        display: flex;
+        column-gap: rem(10);
+
+        &-download {
+            display: flex;
+            flex-direction: column;
+            ;
+            row-gap: rem(10);
+        }
+    }
+
+    &__copyright {
+        text-align: center;
+    }
+}

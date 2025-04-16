@@ -2,37 +2,58 @@ import './_header.scss';
 import photo1 from '../../Assets/Images/Header/photo1.svg'
 import photo2 from '../../Assets/Images/Header/photo2.svg'
 import photo3 from '../../Assets/Images/Header/photo3.svg'
-const Header = () => {
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+const Header = ({ status = true }) => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <header className='header'>
-            <div className="header__inner container">
-                <div className="header__wrapper">
-                    <div className="header__top">
+            <div className="header__wrapper">
+                <div className="header__top">
+                    <div className="header__top-inner">
                         <div className="header__top-wrapper">
                             <p className="header__top-title">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
-                            <span className='header__top-subtitle'>ShopNow</span>
+                            <Link className='header__top-subtitle'>ShopNow</Link>
                         </div>
-                        {/* <select>
-                            <option value="English">English</option>
-                            <option value="Azerbaijan">Azerbaijan</option>
-                            <option value="Russian">Russian</option>
-                        </select> */}
+                        <p className='header__language'>English</p>
                     </div>
-                    <div className="header__bottom">
-                        <p className='header__logo'>Exclusive</p>
-                        <nav className="header__nav">
-                            <ul className="header__list">
-                                <li className="header__item">Home</li>
-                                <li className="header__item">Contact</li>
-                                <li className="header__item">About</li>
-                                <li className="header__item">Sign Up</li>
-                            </ul>
-                        </nav>
-                        <div className="header__search">
-                            <input type="text" className='header__input' />
-                            <img src={photo1} alt="Search" />
-                            <Link><img src={photo2} alt="WishList" /></Link>
-                            <Link><img src={photo3} alt="Basket" /></Link>
+                </div>
+                <div className="header__bottom">
+                    <div className="header__bottom-inner container">
+                        <div className="header__bottom-wrapper">
+                            <p className='header__logo'>Exclusive</p>
+                            <div className={`header__overlay ${isOpen && 'is-active'}`}>
+                                <nav className="header__nav">
+                                    <ul className="header__list">
+                                        <li className="header__item"><Link to={'/'}>Home</Link></li>
+                                        <li className="header__item"><Link to={'contact'}>Contact</Link></li>
+                                        <li className="header__item"><Link to={'about'}>About</Link></li>
+                                        <li className="header__item"><Link to={'signUp'}>Sign Up</Link></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <button className={`header__burger ${isOpen && 'is-active'}`}
+                                onClick={() => setIsOpen(!isOpen)}>
+                                <span className="header__burger-line"></span>
+                                <span className="header__burger-line"></span>
+                                <span className="header__burger-line"></span>
+                            </button>
+                        </div>
+                        <div className="header__content">
+                            <div className="header__content-search">
+                                <input type="text" className='header__input' placeholder='What are you looking for?' />
+                                <img src={photo1} className='header__search' alt="Search" />
+                            </div>
+                            {
+                                status &&
+                                <div className="header__content-baskets">
+                                    <div className="header__liked">
+                                        <img src={photo2} alt="WishList" />
+                                        <div className="header__like">4</div>
+                                    </div>
+                                    <img src={photo3} alt="Basket" />
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

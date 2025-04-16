@@ -4,5 +4,9 @@ body {
     font-family: var(--font-family);
     color: var(--color-dark);
     font-weight: 400;
-    transition-duration: var(--transition-duration);
+    transition-duration: var(--transition-duration) !important;
+}
+
+li {
+    list-style: none;
 }
