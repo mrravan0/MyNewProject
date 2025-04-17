@@ -3,6 +3,10 @@ import FooterCard from './FooterCard/FooterCard';
 import photo1 from '../../Assets/Images/Footer/photo1.png';
 import photo2 from '../../Assets/Images/Footer/photo2.png';
 import photo3 from '../../Assets/Images/Footer/photo3.png';
+import FacebookIcon from "../../Assets/Svg/FacebookIcon";
+import TwitterIcon from "../../Assets/Svg/TwitterIcon";
+import InstagramIcon from "../../Assets/Svg/InstagramIcon";
+import LinkedinIcon from "../../Assets/Svg/LinkedinIcon";
 
 //24 - 28 svg elave edilmeli di.
 
@@ -26,11 +30,14 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="footer__soc1als-images">
-                            {/* Buraya svg -! */}
+                            <FacebookIcon />
+                            <TwitterIcon />
+                            <InstagramIcon />
+                            <LinkedinIcon />
                         </div>
                     </div>
                 </div>
-                <p className="footer__copyright">Copyright Rimel <time datetime="2022">2022</time>. All right reserved</p>
+                <p className="footer__copyright">Copyright Rimel <time dateTime="2022">2022</time>. All right reserved</p>
             </div>
         </footer>
     )

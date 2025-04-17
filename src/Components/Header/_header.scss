@@ -222,11 +222,11 @@
         }
     }
 
-    &__liked {
+    &__liked, &__cart-icon {
         position: relative;
     }
-
-    &__like {
+    
+    &__like, &__cart-count {
         @include square(rem(18));
         font-size: rem(12);
         background-color: var(--color-red);

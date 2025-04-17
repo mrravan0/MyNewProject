@@ -62,12 +62,17 @@
 
         &::placeholder {
             color: var(--color-grey);
+            font-size: 13px;
         }
     }
 
     &__send {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 50%;
+        bottom: 50%;
+        right: 10px;
     }
 }
