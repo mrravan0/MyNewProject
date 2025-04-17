@@ -4,8 +4,8 @@ const FooterCard = ({ textList, status }) => {
     return (
         <div className="footer__card">
             <div className="footer__card-info">
-                {textList.map(item => (
-                    <p className="footer__text">{item}</p>
+                {textList.map((item, index) => (
+                    <p key={index + 'card'} className="footer__text">{item}</p>
                 ))}
             </div>
             {status &&

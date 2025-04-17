@@ -2,12 +2,9 @@ import "./_header.scss";
 import SearchIcon from "../../Assets/Svg/SearchIcon";
 import HeartIcon from "../../Assets/Svg/HeartIcon";
 import Cart from "../../Assets/Svg/Cart";
-import photo1 from "../../Assets/Images/Header/photo1.svg";
-import photo2 from "../../Assets/Images/Header/photo2.svg";
-import photo3 from "../../Assets/Images/Header/photo3.svg";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-const Header = ({ status = true }) => {
+import { useState, memo } from "react";
+const Header = ({ status }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="header">
@@ -85,4 +82,4 @@ const Header = ({ status = true }) => {
     </header>
   );
 };
-export default Header;
+export default memo(Header);
