@@ -42,18 +42,9 @@
     &__login {
         @include fluid-text(calculate(16), 18);
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         column-gap: 1rem;
         color: var(--color-dark);
-
-        @include respond('max', $laptop) {
-            flex-direction: column;
-            row-gap: rem(5);
-        }
-
-        @include respond('max', $tablet) {
-            flex-direction: row;
-        }
 
         &-subtitle {
             font-weight: 500;

@@ -1,0 +1,75 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.categories {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: rem(70);
+        padding-inline: rem(55);
+        gap: 1rem;
+        background-color: var(--color-dark);
+
+        @include respond('max', $tablet) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(32);
+
+        @include respond('max', $laptop) {
+            max-width: rem(calculate(440));
+            width: 100%;
+        }
+
+        @include respond('max', $tablet) {
+            max-width: none;
+            text-align: center;
+            align-items: center;
+        }
+
+        &>.mainButton {
+            margin-top: rem(8);
+            background-color: var(--color-green);
+            max-width: rem(calculate(180));
+            width: 100%;
+
+            @include respond('max', $laptop) {
+                max-width: rem(170)
+            }
+        }
+    }
+
+    &__title {
+        @include fluid-text(calculate(16), 16);
+        color: var(--color-green);
+        font-weight: 700;
+    }
+
+    &__subtitle {
+        @include fluid-text(calculate(48), 25);
+        font-weight: 700;
+        color: var(--color-light);
+    }
+
+    &__cards {
+        display: flex;
+        gap: rem(25);
+
+        @include respond('max', $mobile-s) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+    }
+
+    &__image {
+        @include respond('max', $laptop-s) {
+            width: 450px;
+        }
+    }
+}

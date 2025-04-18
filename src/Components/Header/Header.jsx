@@ -1,6 +1,7 @@
 import "./_header.scss";
 import SearchIcon from "../../Assets/Svg/SearchIcon";
 import HeartIcon from "../../Assets/Svg/HeartIcon";
+import ArrowDown from '../../Assets/Svg/ArrowDown';
 import Cart from "../../Assets/Svg/Cart";
 import { Link } from "react-router-dom";
 import { useState, memo } from "react";
@@ -18,7 +19,10 @@ const Header = ({ status }) => {
               </p>
               <Link className="header__top-subtitle">ShopNow</Link>
             </div>
-            <p className="header__language">English</p>
+            <div className="header__language">
+              <p>English</p>
+              <ArrowDown />
+            </div>
           </div>
         </div>
         <div className="header__bottom">
@@ -32,13 +36,13 @@ const Header = ({ status }) => {
                       <Link to={"/"}>Home</Link>
                     </li>
                     <li className="header__item">
-                      <Link to={"contact"}>Contact</Link>
+                      <Link to={"/contact"}>Contact</Link>
                     </li>
                     <li className="header__item">
-                      <Link to={"about"}>About</Link>
+                      <Link to={"/about"}>About</Link>
                     </li>
                     <li className="header__item">
-                      <Link to={"signUp"}>Sign Up</Link>
+                      <Link to={"/signUp"}>Sign Up</Link>
                     </li>
                   </ul>
                 </nav>

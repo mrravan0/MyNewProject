@@ -1,0 +1,84 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.featured {
+    padding-block: rem(140);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(60);
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 570px minmax(200px, 1fr) minmax(200px, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            'first second second'
+            'first third fourth';
+        gap: rem(30);
+        height: rem(600);
+
+        @include respond('max', $laptop-s) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+                'first first'
+                'second second'
+                'third fourth';
+        }
+
+        @include respond('max', $mobile) {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+
+        .featured__card {
+
+            &:first-child,
+            &:nth-child(2),
+            &:nth-child(3),
+            &:last-child {
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position-y: bottom;
+            }
+
+            &:nth-child(3),
+            &:last-child {
+                background-position-y: center;
+                background-position-x: center;
+                padding: rem(24);
+
+                @include respond('min', $laptop-s) {
+                    background-size: 200px;
+                }
+            }
+
+            &:first-child {
+                background-image: url(../../Assets/Images/Featured/photo1.png);
+                background-position-x: center;
+                grid-area: first;
+                padding: rem(32);
+            }
+
+            &:nth-child(2) {
+                background-image: url(../../Assets/Images/Featured/photo2.png);
+                background-position-x: right;
+                grid-area: second;
+                padding: rem(24);
+            }
+
+            &:nth-child(3) {
+                background-image: url(../../Assets/Images/Featured/photo4.png);
+                grid-area: third;
+            }
+
+            &:last-child {
+                background-image: url(../../Assets/Images/Featured/photo3.png);
+                grid-area: fourth;
+            }
+        }
+    }
+}

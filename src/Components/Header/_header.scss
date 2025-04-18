@@ -195,7 +195,7 @@
 
         @include respond('max', $tablet) {
             width: 100%;
-            justify-content: space-between;
+            justify-content: center;
         }
 
         @include respond('max', $mobile-s) {
@@ -222,11 +222,18 @@
         }
     }
 
-    &__liked, &__cart-icon {
+    &__language {
+        display: flex;
+        align-items: center;
+    }
+
+    &__liked,
+    &__cart-icon {
         position: relative;
     }
-    
-    &__like, &__cart-count {
+
+    &__like,
+    &__cart-count {
         @include square(rem(18));
         font-size: rem(12);
         background-color: var(--color-red);
