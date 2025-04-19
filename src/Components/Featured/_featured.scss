@@ -47,9 +47,9 @@
 
             &:nth-child(3),
             &:last-child {
-                background-position-y: center;
-                background-position-x: center;
+                background-position: center;
                 padding: rem(24);
+                row-gap: rem(8);
 
                 @include respond('min', $laptop-s) {
                     background-size: 200px;
@@ -60,6 +60,7 @@
                 background-image: url(../../Assets/Images/Featured/photo1.png);
                 background-position-x: center;
                 grid-area: first;
+                row-gap: rem(16);
                 padding: rem(32);
             }
 
@@ -67,6 +68,7 @@
                 background-image: url(../../Assets/Images/Featured/photo2.png);
                 background-position-x: right;
                 grid-area: second;
+                row-gap: rem(16);
                 padding: rem(24);
             }
 
@@ -79,6 +81,32 @@
                 background-image: url(../../Assets/Images/Featured/photo3.png);
                 grid-area: fourth;
             }
+        }
+    }
+
+    &__info {
+        margin-top: rem(80);
+        margin-inline: auto;
+        max-width: rem(calculate(950));
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @include respond('max', $laptop) {
+            max-width: rem(950);
+        }
+
+        @include respond('max', $tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            row-gap: rem(70);
+            column-gap: 1rem;
+        }
+
+        @include respond('max', $mobile-s) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3, 1fr); 
         }
     }
 }

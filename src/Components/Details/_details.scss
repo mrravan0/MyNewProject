@@ -1,0 +1,17 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.details {
+    padding-block: rem(80) rem(140);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(80);
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 700px minmax(400px, 1fr);
+        column-gap: rem(70);
+    }
+}

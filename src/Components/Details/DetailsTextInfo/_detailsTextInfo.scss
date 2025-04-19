@@ -1,0 +1,216 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.details {
+
+    &__right,
+    &__top,
+    &__top-wrapper,
+    &__bottom,
+    &__bottom-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__right {
+        row-gap: rem(48);
+    }
+
+    &__top,
+    &__bottom-wrapper {
+        row-gap: rem(24);
+    }
+
+    &__top {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: rem(-24);
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-grey);
+        }
+
+        &-wrapper {
+            row-gap: rem(16);
+        }
+
+        &-title {
+            @include fluid-text(calculate(24), 20);
+            font-weight: 700;
+        }
+
+        &-score {
+            display: flex;
+            align-items: center;
+            column-gap: rem(8);
+        }
+
+        &-description {
+            color: var(--color-green);
+            position: relative;
+            margin-left: rem(32);
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                background-color: var(--color-grey);
+                top: 0;
+                left: rem(-16);
+            }
+        }
+    }
+
+    &__stars {
+        display: flex;
+        align-items: center;
+        column-gap: rem(5)
+    }
+
+    &__reviews {
+        @include fluid-text(calculate(14), 16);
+        color: var(--color-grey);
+    }
+
+    &__price {
+        @include fluid-text(calculate(24), 20);
+    }
+
+    &__description {
+        @include fluid-text(calculate(13), 14);
+    }
+
+    &__bottom {
+        row-gap: rem(40);
+
+        &-text {
+            @include fluid-text(calculate(20), 18);
+        }
+
+    }
+
+    &__colors {
+        display: flex;
+        align-items: center;
+        column-gap: rem(24);
+
+        &-content {
+            display: flex;
+            align-items: center;
+            column-gap: rem(10);
+        }
+
+        &-left,
+        &-right {
+            @include square(rem(calculate(12)));
+            padding: rem(8);
+            border-radius: 50%;
+            cursor: pointer;
+
+            @include respond('max', $laptop) {
+                @include square(rem(12));
+            }
+
+            &.active {
+                border: 5px solid var(--color-dark);
+            }
+        }
+
+        &-left {
+            background-color: rgba(160, 188, 224, 1);
+        }
+
+        &-right {
+            background-color: rgba(224, 117, 117, 1);
+        }
+    }
+
+    &__size {
+        display: flex;
+        align-items: center;
+        column-gap: rem(24);
+
+        &-content {
+            display: flex;
+            align-items: center;
+            column-gap: rem(16);
+        }
+
+        &-description {
+            @include square(rem(calculate(32)));
+            @include fluid-text(calculate(14), 16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: rem(5);
+            border: 1px solid var(--color-grey);
+            cursor: pointer;
+
+            @include respond('max', $laptop) {
+                @include square(rem(32));
+            }
+        }
+    }
+
+    &__buy {
+        display: flex;
+        align-items: center;
+        column-gap: rem(16);
+    }
+
+    &__count {
+        display: flex;
+        align-content: center;
+        max-width: rem(calculate(160));
+        width: 100%;
+        border: 2px solid var(--color-grey);
+        border-radius: rem(5);
+
+        &>.details__bottom-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        &-left,
+        &-right {
+            @include square(rem(calculate(44)));
+            @include fluid-text(calculate(20), 18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-inline: rem(18);
+            cursor: pointer;
+
+            @include respond('max', $laptop) {
+                @include square(rem(44));
+            }
+        }
+
+        &-left {
+            border-right: 2px solid var(--color-grey);
+        }
+
+        &-right {
+            color: var(--color-light);
+            background-color: var(--color-red);
+        }
+    }
+
+    &__like {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-grey);
+        border-radius: rem(5);
+
+        svg {
+            @include square(rem(calculate(40)));
+        }
+    }
+}

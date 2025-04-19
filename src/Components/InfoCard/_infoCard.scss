@@ -1,0 +1,70 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.infoCard {
+    max-width: rem(calculate(250));
+    width: 100%;
+
+    @include respond('max', $laptop) {
+        max-width: rem(250);
+    }
+
+    @include respond('max', $tablet) {
+        max-width: none;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(24);
+    }
+
+    &__content,
+    &__inner {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        @include square(rem(calculate(80)));
+        background-color: rgb(193, 193, 193);
+
+        @include respond('max', $laptop) {
+            @include square(rem(80));
+        }
+    }
+
+    &__inner {
+        @include square(rem(calculate(60)));
+        background-color: var(--color-dark);
+
+        @include respond('max', $laptop) {
+            @include square(rem(60));
+        }
+    }
+
+    &__texts {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(8);
+
+        @include respond('max', $mobile) {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-size: 25px;
+        font-weight: 700;
+
+        @include respond('max', $laptop) {
+            font-size: 19px;
+        }
+    }
+
+    &__subtitle {
+        @include fluid-text(calculate(13), 14);
+    }
+}
