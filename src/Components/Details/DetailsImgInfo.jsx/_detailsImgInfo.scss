@@ -4,7 +4,11 @@
     &__left {
         display: flex;
         justify-content: space-between;
-        column-gap: rem(30);
+        gap: rem(30);
+
+        @include respond('max', $mobile-s) {
+            flex-direction: column-reverse;
+        }
 
 
         &-side--image,
@@ -17,6 +21,12 @@
             width: 100%;
         }
 
+        &-main {
+            @include respond('max', $mobile-s) {
+                padding: rem(20);
+            }
+        }
+
         &-side {
             display: flex;
             flex-direction: column;
@@ -26,6 +36,10 @@
             &--image {
                 width: rem(170);
                 height: rem(140);
+
+                @include respond('max', $mobile-s) {
+                    width: 100%;
+                }
             }
         }
     }

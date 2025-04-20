@@ -1,10 +1,10 @@
-const HeartIcon = ({ color, width = '32', height = '32'}) => {
+const HeartIcon = ({ color, width = '32', height = '32' }) => {
   return (
     <svg
       width={width}
       height={height}
       viewBox="0 0 32 32"
-      fill="none"
+      fill={color || '#fff'}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

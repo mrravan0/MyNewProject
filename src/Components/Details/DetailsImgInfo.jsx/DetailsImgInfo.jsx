@@ -6,7 +6,7 @@ const DetailsImgInfo = ({ imgList }) => {
                 {
                     imgList.map((item, index) => (
                         index < 4 &&
-                        <div className="details__left-side--image">
+                        <div key={index + 'details'} className="details__left-side--image">
                             <img src={item} alt="" />
                         </div>
                     ))
