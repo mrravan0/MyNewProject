@@ -1,0 +1,89 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.signUp {
+    padding-block: rem(60) rem(140);
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: rem(130);
+        padding-right: rem(20);
+
+        @include respond('max', $tablet) {
+            padding-inline: rem(20);
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(32);
+        max-width: rem(calculate(370));
+        width: 100%;
+
+        @include respond('max', $laptop) {
+            max-width: rem(370);
+        }
+
+        @include respond('max', $tablet) {
+            align-items: center;
+            max-width: none;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 1rem;
+        margin-top: rem(8);
+    }
+
+    &__login {
+        @include fluid-text(calculate(16), 18);
+        display: flex;
+        justify-content: center;
+        column-gap: 1rem;
+        color: var(--color-dark);
+
+        &-subtitle {
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        &-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: rem(80);
+            width: 100%;
+
+            a {
+                max-width: rem(450);
+            }
+
+            @include respond('max', $laptop) {
+                column-gap: rem(40)
+            }
+        }
+
+        &-forget {
+            @include fluid-text(calculate(16), 16);
+            color: var(--color-red);
+
+            @include respond('min', $laptop-s) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__image {
+        @include respond('max', $laptop-s) {
+            width: rem(600);
+        }
+
+        @include respond('max', $tablet) {
+            display: none;
+        }
+    }
+}

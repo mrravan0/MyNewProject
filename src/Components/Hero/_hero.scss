@@ -1,0 +1,109 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.hero {
+    padding-bottom: rem(140);
+    position: relative;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        column-gap: rem(45);
+    }
+
+    &__left {
+        max-width: rem(calculate(240));
+        padding-top: rem(40);
+        width: 100%;
+        padding-right: rem(16);
+        position: relative;
+
+        @include respond('min', $mobile) {
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 2px;
+                height: 100%;
+                background-color: var(--color-grey);
+            }
+        }
+
+        @include respond('max', $laptop) {
+            max-width: rem(220);
+        }
+
+        @include respond('max', $mobile) {
+            padding: 0;
+            max-width: none;
+            width: 100%;
+        }
+
+    }
+
+    &__overlay {
+        @include respond('min', $mobile) {
+            display: contents;
+        }
+
+        @include respond('max', $mobile) {
+            z-index: 100;
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 3rem;
+            padding: 1rem;
+            background-color: var(--color-light);
+            transition-duration: var(--transition-duration) !important;
+
+            &:not(.active) {
+                display: none;
+            }
+        }
+
+    }
+
+    &__button {
+        z-index: 200;
+        position: absolute;
+        top: 50%;
+        transition-duration: var(--transition-duration);
+
+        &.active {
+            position: fixed;
+            top: 0;
+            transform: rotate(180deg);
+        }
+
+        svg {
+            width: rem(40);
+            height: rem(40);
+        }
+
+        @include respond('min', $mobile) {
+            display: none;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(16);
+
+        @include respond('max', $mobile) {
+            align-items: center;
+            row-gap: rem(30);
+        }
+    }
+
+    &__item {
+        @include fluid-text(calculate(16), 18);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+}

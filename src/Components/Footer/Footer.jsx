@@ -7,10 +7,8 @@ import FacebookIcon from "../../Assets/Svg/FacebookIcon";
 import TwitterIcon from "../../Assets/Svg/TwitterIcon";
 import InstagramIcon from "../../Assets/Svg/InstagramIcon";
 import LinkedinIcon from "../../Assets/Svg/LinkedinIcon";
-
-//24 - 28 svg elave edilmeli di.
-
-const Footer = () => {
+import { memo } from 'react';
+const Footer = memo(() => {
     return (
         <footer className="footer">
             <div className="footer__inner container">
@@ -41,5 +39,5 @@ const Footer = () => {
             </div>
         </footer>
     )
-}
+})
 export default Footer;

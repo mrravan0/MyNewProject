@@ -1,0 +1,17 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.pageInfo {
+    display: flex;
+    column-gap: rem(15);
+
+    &__description {
+        @include fluid-text(calculate(14), 14);
+        display: flex;
+        align-items: center;
+        column-gap: rem(15);
+
+        &:not(:last-child) {
+            color: var(--color-grey);
+        }
+    }
+}

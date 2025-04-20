@@ -1,0 +1,32 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.details {
+    &__left {
+        display: flex;
+        justify-content: space-between;
+        column-gap: rem(30);
+
+
+        &-side--image,
+        &-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(245, 245, 245, 1);
+            border-radius: rem(5);
+            width: 100%;
+        }
+
+        &-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 1rem;
+
+            &--image {
+                width: rem(170);
+                height: rem(140);
+            }
+        }
+    }
+}
