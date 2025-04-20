@@ -7,8 +7,10 @@ const Home = () => {
     return (
         <Fragment>
             <Hero />
-            <Categories />
-            <Featured />
+            <main>
+                <Categories />
+                <Featured />
+            </main>
         </Fragment>
     )
 }

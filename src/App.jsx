@@ -34,7 +34,8 @@ function App() {
               }
               texts={
                 ['Havic HV G-92 Gamepad',
-                  'PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.']
+                  'PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.'
+                ]
               }
               price={'$192.00'} />} />
       </Routes>

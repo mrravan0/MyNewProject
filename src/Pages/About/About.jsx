@@ -1,4 +1,12 @@
+import { Fragment } from "react";
+import Story from "../../Components/Story/Story";
+import Activities from "../../Components/Activites/Activities";
 const About = () => {
-    return <p>About Page. I did everything correctly ':)'</p>
+    return (
+        <Fragment>
+            <Story />
+            <Activities />
+        </Fragment>
+    )
 }
 export default About;

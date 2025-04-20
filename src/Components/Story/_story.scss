@@ -1,0 +1,79 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.story {
+    position: relative;
+    padding-block: rem(80) rem(140);
+
+    &__wrapper,
+    &__left,
+    &__text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__wrapper {
+        row-gap: rem(180);
+
+        @include respond('max', $tablet) {
+            row-gap: rem(90);
+        }
+    }
+
+    &__left {
+        row-gap: rem(40);
+        max-width: rem(calculate(525));
+        width: 100%;
+
+        @include respond('max', $laptop) {
+            max-width: rem(525);
+        }
+
+        @include respond('max', $tablet) {
+            max-width: none;
+        }
+    }
+
+    &__content {
+        @include respond('min', $tablet) {
+            display: contents
+        }
+
+        @include respond('max', $tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: rem(70);
+        }
+    }
+
+    &__title {
+        @include fluid-text(calculate(54), 30);
+        font-weight: 500;
+    }
+
+    &__text {
+        row-gap: rem(24);
+    }
+
+    &__description {
+        @include fluid-text(calculate(16), 16);
+    }
+
+    &__image {
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+        right: 0;
+
+        @include respond('max', $laptop-s) {
+            max-width: rem(500);
+            width: 100%;
+        }
+
+        @include respond('max', $tablet) {
+            position: static;
+            transform: none;
+            max-width: rem(600);
+        }
+    }
+}

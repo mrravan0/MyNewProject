@@ -2,7 +2,7 @@ $laptop: 1440px;
 $laptop-s: 1250px;
 $tablet: 1050px;
 $mobile: 790px;
-$mobile-s: 500px;
+$mobile-s: 550px;
 
 @mixin respond($query, $value) {
     @if $query =='min' {
