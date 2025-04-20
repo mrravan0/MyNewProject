@@ -12,6 +12,11 @@
     &__content {
         display: grid;
         grid-template-columns: 700px minmax(400px, 1fr);
-        column-gap: rem(70);
+        gap: rem(70);
+
+        @include respond('max',$laptop-s){
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
