@@ -43,8 +43,7 @@ const Banner = () => {
         bulletClass: "swiper-pagination-bullet",
         bulletActiveClass: "swiper-pagination-bullet-active",
       }}
-      autoplay={{ delay: 5000 }}
-    >
+      autoplay={{ delay: 5000 }}>
       {data?.map((item) => (
         <SwiperSlide key={item?.id}>
           <div className="banner__right">

@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Home from './Pages/Home/Home';
-import Contact from './Pages/Contact/Contact';
+import ContactPage from './Pages/ContactPage/ContactPage';
 import About from './Pages/About/About';
 import SignUp from './Pages/SignUp/SignUp';
 import Login from './Components/LogIn/Login';
@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<ContactPage />} />
         <Route path='/signUp' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route

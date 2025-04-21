@@ -83,30 +83,4 @@
             }
         }
     }
-
-    &__info {
-        margin-top: rem(80);
-        margin-inline: auto;
-        max-width: rem(calculate(950));
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-
-        @include respond('max', $laptop) {
-            max-width: rem(950);
-        }
-
-        @include respond('max', $tablet) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            row-gap: rem(70);
-            column-gap: 1rem;
-        }
-
-        @include respond('max', $mobile-s) {
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(3, 1fr); 
-        }
-    }
 }
