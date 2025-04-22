@@ -7,7 +7,9 @@ import ContactPage from './Pages/ContactPage/ContactPage';
 import About from './Pages/About/About';
 import SignUp from './Pages/SignUp/SignUp';
 import Login from './Components/LogIn/Login';
+import Cart from './Components/Cart/Cart';
 import Details from './Components/Details/Details';
+import { DataProvider, DataContext } from './Context/Context';
 import photo1 from './Assets/Images/Details/photo1.png';
 import photo2 from './Assets/Images/Details/photo2.png';
 import photo3 from './Assets/Images/Details/photo3.png';
@@ -25,6 +27,10 @@ function App() {
         <Route path='/contact' element={<ContactPage />} />
         <Route path='/signUp' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/cart' element={
+          <DataProvider>
+            <Cart />
+          </DataProvider>} />
         <Route
           path='/productDetails'
           element={

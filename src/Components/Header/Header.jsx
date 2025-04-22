@@ -21,7 +21,10 @@ const Header = ({ status }) => {
             </div>
             <div className="header__language">
               <p>English</p>
-              <ArrowDown />
+              <ArrowDown features={{
+                width: '24',
+                height: '24'
+              }} />
             </div>
           </div>
         </div>
@@ -29,26 +32,26 @@ const Header = ({ status }) => {
           <div className="header__bottom-inner container">
             <div className="header__bottom-wrapper">
               <p className="header__logo">Exclusive</p>
-              <div className={`header__overlay ${isOpen && "is-active"}`}>
+              <div className={`header__overlay ${isOpen ? "is-active" : ''}`}>
                 <nav className="header__nav">
                   <ul className="header__list">
-                    <li className="header__item">
+                    <li className="header__item" onClick={() => setIsOpen(!isOpen)}>
                       <Link to={"/"}>Home</Link>
                     </li>
-                    <li className="header__item">
+                    <li className="header__item" onClick={() => setIsOpen(!isOpen)}>
                       <Link to={"/contact"}>Contact</Link>
                     </li>
-                    <li className="header__item">
+                    <li className="header__item" onClick={() => setIsOpen(!isOpen)}>
                       <Link to={"/about"}>About</Link>
                     </li>
-                    <li className="header__item">
+                    <li className="header__item" onClick={() => setIsOpen(!isOpen)}>
                       <Link to={"/signUp"}>Sign Up</Link>
                     </li>
                   </ul>
                 </nav>
               </div>
               <button
-                className={`header__burger ${isOpen && "is-active"}`}
+                className={`header__burger ${isOpen ? "is-active" : ''}`}
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <span className="header__burger-line"></span>
