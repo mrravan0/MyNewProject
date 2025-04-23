@@ -18,9 +18,17 @@ export const DataProvider = ({ children }) => {
             }
         ]
     )
+    console.log(fakeData);
+    
+
+    // useEffect(() => {
+    //     const newResult = information.price * counter;
+    //     setResult(newResult);
+    //     setTotal(prevTotal => (prevTotal || 0) + newResult);
+    // }, [information.price, counter]);
 
     return (
-        <DataContext.Provider value={{ total, setTotal, fakeData }}>
+        <DataContext.Provider value={{ total, setTotal, fakeData ,setFakeData}}>
             {children}
         </DataContext.Provider>
     );

@@ -3,16 +3,27 @@ import ArrowDown from '../../../Assets/Svg/ArrowDown';
 import ArrowUp from '../../../Assets/Svg/ArrowUp';
 import { DataContext } from '../../../Context/Context';
 import './_cartCard.scss';
-const CartCard = memo(({ information, status = false, }) => {
-    const { total, setTotal } = useContext(DataContext);
+const CartCard = memo(({ information, status = false, array }) => {
+    const { total, setTotal, setFakeData } = useContext(DataContext);
     const [counter, setCounter] = useState(1);
     const [result, setResult] = useState(information.price);
 
+    // useEffect(() => {
+    //     let allSummary = total + result;
+    //     setTotal(allSummary)
+    // }, [result])
+
+
     useEffect(() => {
-        const newResult = information.price * counter;
-        setResult(newResult);
-        setTotal(prevTotal => (prevTotal || 0) + newResult);
-    }, [information.price, counter]);
+        let newArray = [...array].map(item => {
+
+            item.price = item.price * counter
+            return item;
+        })
+        setFakeData(newArray)
+        let newResult = information.price * counter;
+        setResult(newResult)
+    }, [counter])
 
     return (
         <div className="cart__card">
@@ -26,7 +37,7 @@ const CartCard = memo(({ information, status = false, }) => {
                         <img src={information.image} alt="" />
                         <p className="cart__description">{information.text}</p>
                     </div>
-                    <p className="cart__description">${result}</p>
+                    <p className="cart__description">${information.price}</p>
                     <div className="cart__count">
                         <input
                             className='cart__input cart__description'

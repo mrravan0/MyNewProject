@@ -15,14 +15,15 @@ const Cart = () => {
                     <div className="cart__group">
                         <div className="cart__top">
                             <div className="cart__content">
-                                <CartCard
+                                {/* <CartCard
                                     status={true}
                                     information={
-                                        ['Product', 'Price', 'Quantity', 'Subtotal']} />
-                                {fakeData?.map((item, index) => (
+                                        ['Product', 'Price', 'Quantity', 'Subtotal']} /> */}
+                                {fakeData?.map((item, index, arr) => (
                                     <CartCard
                                         key={index}
                                         information={item}
+                                        array = {arr}
                                     />
                                 ))}
                             </div>

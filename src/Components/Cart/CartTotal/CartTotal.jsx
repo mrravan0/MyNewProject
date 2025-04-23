@@ -19,15 +19,15 @@ const CartTotal = () => {
                 <div className="cart__right-description">
                     <div className="cart__right-content">
                         <p className="cart__subtitle">Subtotal:</p>
-                        <p className="cart__total cart__subtitle">$ 1750</p>
+                        <p className="cart__total cart__subtitle">$ {total}</p>
                     </div>
                     <div className="cart__right-content">
-                        <p className="cart__subtitle">Shipping::</p>
+                        <p className="cart__subtitle">Shipping:</p>
                         <p className="cart__total cart__subtitle">Free</p>
                     </div>
                     <div className="cart__right-content">
-                        <p className="cart__subtitle">Total::</p>
-                        <p className="cart__total cart__subtitle">$ 1750</p>
+                        <p className="cart__subtitle">Total:</p>
+                        <p className="cart__total cart__subtitle">$ {total}</p>
                     </div>
                 </div>
                 <Button text={'Procees to checkout'} to={'/checkOut'} />
