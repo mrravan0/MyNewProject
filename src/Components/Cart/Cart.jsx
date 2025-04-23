@@ -2,10 +2,11 @@ import PageInfo from '../PageInfo/PageInfo';
 import CartCard from './CartCard/CartCard';
 import CartTotal from './CartTotal/CartTotal';
 import Button from '../Button/Button';
-import photo1 from '../../Assets/Images/Cart/photo1.png';
-import photo2 from '../../Assets/Images/Cart/photo2.png';
+import { DataContext } from '../../Context/Context';
+import { useContext } from 'react';
 import './_cart.scss';
 const Cart = () => {
+    const { fakeData } = useContext(DataContext)
     return (
         <section className='cart'>
             <div className="cart__inner container">
@@ -18,23 +19,12 @@ const Cart = () => {
                                     status={true}
                                     information={
                                         ['Product', 'Price', 'Quantity', 'Subtotal']} />
-                                <CartCard
-                                    information={
-                                        {
-                                            text: 'LCD Monitor',
-                                            price: 650,
-                                            image: photo1
-                                        }
-                                    }
-                                />
-                                <CartCard
-                                    information={
-                                        {
-                                            text: 'H1 Gamepad',
-                                            price: 550,
-                                            image: photo2
-                                        }
-                                    } />
+                                {fakeData?.map((item, index) => (
+                                    <CartCard
+                                        key={index}
+                                        information={item}
+                                    />
+                                ))}
                             </div>
                             <div className="cart__info">
                                 <Button text={'Return To Shop'} />

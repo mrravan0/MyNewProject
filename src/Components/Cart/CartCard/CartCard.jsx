@@ -7,9 +7,12 @@ const CartCard = memo(({ information, status = false, }) => {
     const { total, setTotal } = useContext(DataContext);
     const [counter, setCounter] = useState(1);
     const [result, setResult] = useState(information.price);
+
     useEffect(() => {
-        setResult(information.price * counter)
-    }, [information.price, counter])
+        const newResult = information.price * counter;
+        setResult(newResult);
+        setTotal(prevTotal => (prevTotal || 0) + newResult);
+    }, [information.price, counter]);
 
     return (
         <div className="cart__card">
@@ -28,7 +31,8 @@ const CartCard = memo(({ information, status = false, }) => {
                         <input
                             className='cart__input cart__description'
                             type="number"
-                            value={counter} />
+                            value={counter}
+                            onChange={(e) => setCounter(Number(e.target.value))} />
                         <div className="cart__arrows">
                             <ArrowUp
                                 features={{

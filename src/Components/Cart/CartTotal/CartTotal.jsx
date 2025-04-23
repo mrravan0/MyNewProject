@@ -30,7 +30,7 @@ const CartTotal = () => {
                         <p className="cart__total cart__subtitle">$ 1750</p>
                     </div>
                 </div>
-                <Button text={'Procees to checkout'} />
+                <Button text={'Procees to checkout'} to={'/checkOut'} />
             </div>
         </Fragment>
     )

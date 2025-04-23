@@ -9,7 +9,8 @@ import SignUp from './Pages/SignUp/SignUp';
 import Login from './Components/LogIn/Login';
 import Cart from './Components/Cart/Cart';
 import Details from './Components/Details/Details';
-import { DataProvider, DataContext } from './Context/Context';
+import CheckOut from './Components/CheckOut/CheckOut';
+import { DataProvider } from './Context/Context';
 import photo1 from './Assets/Images/Details/photo1.png';
 import photo2 from './Assets/Images/Details/photo2.png';
 import photo3 from './Assets/Images/Details/photo3.png';
@@ -21,30 +22,30 @@ function App() {
   return (
     <Fragment>
       <Header status={status} />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<ContactPage />} />
-        <Route path='/signUp' element={<SignUp />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/cart' element={
-          <DataProvider>
-            <Cart />
-          </DataProvider>} />
-        <Route
-          path='/productDetails'
-          element={
-            <Details
-              images={
-                [photo1, photo2, photo3, photo4, photo5]
-              }
-              texts={
-                ['Havic HV G-92 Gamepad',
-                  'PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.'
-                ]
-              }
-              price={'$192.00'} />} />
-      </Routes>
+      <DataProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<ContactPage />} />
+          <Route path='/signUp' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/checkOut' element={<CheckOut />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route
+            path='/productDetails'
+            element={
+              <Details
+                images={
+                  [photo1, photo2, photo3, photo4, photo5]
+                }
+                texts={
+                  ['Havic HV G-92 Gamepad',
+                    'PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.'
+                  ]
+                }
+                price={'$192.00'} />} />
+        </Routes>
+      </DataProvider>
       <Footer />
     </Fragment>
   )
