@@ -1,0 +1,21 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.account {
+    &__left {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(24);
+
+
+        .is-select {
+            color: var(--color-red);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(8);
+        padding-left: rem(35);
+    }
+}

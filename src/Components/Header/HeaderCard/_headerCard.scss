@@ -1,0 +1,102 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.header {
+    &__content {
+        display: flex;
+        gap: rem(15) rem(25);
+
+        @include respond('max', $tablet) {
+            width: 100%;
+            justify-content: center;
+        }
+
+        @include respond('max', $mobile-s) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        &-search {
+            position: relative;
+
+            @include respond('max', $tablet) {
+                width: 80%;
+            }
+
+            @include respond('max', $mobile-s) {
+                width: 100%;
+            }
+        }
+
+        &-baskets {
+            display: flex;
+            align-items: flex-end;
+            column-gap: rem(16);
+        }
+    }
+
+    &__liked,
+    &__cart-icon {
+        position: relative;
+        cursor: pointer
+    }
+
+    &__like,
+    &__cart-count {
+        @include square(rem(18));
+        font-size: rem(12);
+        background-color: var(--color-red);
+        color: var(--color-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__input {
+        font-size: rem(calculate(12));
+        padding: rem(12) rem(20);
+        padding-right: rem(35);
+        background-color: rgba(245, 245, 245, 1);
+        border-radius: rem(5);
+        width: rem(calculate(230));
+        outline: none;
+
+        &::placeholder {
+            color: var(--color-grey);
+        }
+
+        @include respond('max', $tablet) {
+            width: 100%;
+        }
+    }
+
+    &__search {
+        position: absolute;
+        right: rem(10);
+        top: rem(12);
+    }
+
+    &__user {
+        @include square(rem(calculate(32)));
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .is-user {
+        background-color: var(--color-red);
+        border-radius: 50%;
+        transition-duration: var(--transition-duration);
+    }
+
+    .is-black {
+        .header__selected-title {
+            color: var(--color-dark);
+        }
+    }
+}

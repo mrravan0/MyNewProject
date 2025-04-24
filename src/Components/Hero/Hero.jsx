@@ -1,10 +1,6 @@
 import "./_hero.scss";
-// import photo1 from "../../Assets/Images/Hero/photo1.png";
 import ArrowRight from "../../Assets/Svg/ArrowRight";
-
-// import photo3 from "../../Assets/Images/Hero/photo3.png";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Banner from "../Banner/Banner";
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
