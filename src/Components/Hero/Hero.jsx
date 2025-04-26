@@ -1,7 +1,7 @@
-import "./_hero.scss";
 import ArrowRight from "../../Assets/Svg/ArrowRight";
 import { useState } from "react";
 import Banner from "../Banner/Banner";
+import "./_hero.scss";
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (

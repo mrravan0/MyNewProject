@@ -3,8 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import useSWR from "swr";
-import { useSliderTrigger } from "../sliderTrigger.js";
-import { useSliderData } from "../sliderTrigger.js";
+import { useSliderTrigger, useSliderData } from "../sliderTrigger.js";
 import ArrowToRight from "../../Assets/Svg/ArrowToRight";
 import photo1 from "../../Assets/Images/Hero/photo1.png";
 import photo3 from "../../Assets/Images/Hero/photo3.png";
@@ -13,21 +12,21 @@ import "./Banner.scss";
 const Banner = () => {
   const { isOpen, handleOpen } = useSliderTrigger();
   const { setData } = useSliderData();
-  let data = [
+  const data = [
     {
       id: 0,
       title: "iphone13 series",
-      desc: "up to 10% off Voucher",
+      desc: "up to 10%",
     },
-    {
+    { 
       id: 1,
       title: "iphone14 max",
-      desc: "up to 15% off Voucher",
+      desc: "up to 15%",
     },
     {
       id: 2,
       title: "iphone15 pro",
-      desc: "up to 19% off Voucher",
+      desc: "up to 19%",
     },
   ];
   return (
@@ -50,10 +49,10 @@ const Banner = () => {
             <div className="banner__info">
               <div className="banner__info-content">
                 <img className="banner__info-image" src={photo3} alt="" />
-                <h1 className="banner__title">iPhone 14 Series</h1>
+                <h1 className="banner__title">{item.title}</h1>
               </div>
               <h2 className="banner__subtitle">
-                Up to 10% <br /> off Voucher
+                {item.desc} <br /> off Voucher
               </h2>
               <div className="banner__shopNow">
                 <button

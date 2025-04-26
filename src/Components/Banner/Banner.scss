@@ -80,16 +80,15 @@
 }
 
 .swiper-pagination-bullet {
-    background-color: white !important;
+    background-color: var(--color-light) !important;
     /* active bullet color */
     opacity: 0.5;
     margin-bottom: rem(50)
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #DB4444 !important;
+    background-color: var(--color-red) !important;
     /* inactive bullet color */
     opacity: 1;
     border: rem(1) solid white;
-
 }

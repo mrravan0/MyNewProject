@@ -6,7 +6,8 @@ import { DataContext } from '../../Context/Context';
 import { useContext } from 'react';
 import './_cart.scss';
 const Cart = () => {
-    const { fakeData } = useContext(DataContext)
+    const { fakeData } = useContext(DataContext);
+    const information = ['Product', 'Price', 'Quantity', 'Subtotal'];
     return (
         <section className='cart'>
             <div className="cart__inner container">
@@ -15,15 +16,21 @@ const Cart = () => {
                     <div className="cart__group">
                         <div className="cart__top">
                             <div className="cart__content">
-                                {/* <CartCard
-                                    status={true}
-                                    information={
-                                        ['Product', 'Price', 'Quantity', 'Subtotal']} /> */}
+                                <div className="cart__card">
+                                    <div className="cart__card-wrapper">
+                                        <p className="cart__description">{information[0]}</p>
+                                        <p className="cart__description">{information[1]}</p>
+                                    </div>
+                                    <div className="cart__card-wrapper">
+                                        <p className="cart__description">{information[2]}</p>
+                                        <p className="cart__description">{information[3]}</p>
+                                    </div>
+                                </div>
                                 {fakeData?.map((item, index, arr) => (
                                     <CartCard
                                         key={index}
                                         information={item}
-                                        array = {arr}
+                                        array={arr}
                                     />
                                 ))}
                             </div>
