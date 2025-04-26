@@ -4,7 +4,6 @@ import { DataContext } from '../../../Context/Context';
 import './_cartTotal.scss';
 const CartTotal = () => {
     const { total } = useContext(DataContext);
-    console.log(total);
 
     return (
         <Fragment>
@@ -30,7 +29,7 @@ const CartTotal = () => {
                         <p className="cart__total cart__subtitle">$ {total}</p>
                     </div>
                 </div>
-                <Button text={'Procees to checkout'} to={'/checkOut'} />
+                <Button text={'Process to checkout'} to={'/checkOut'} />
             </div>
         </Fragment>
     )

@@ -1,0 +1,149 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.product {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: rem(16);
+    max-width: rem(calculate(250));
+    width: 100%;
+    background: transparent;
+    border-radius: rem(4);
+    overflow: hidden;
+    cursor: pointer;
+
+    @include respond('max', $laptop) {
+      max-width: rem(250);
+    }
+
+    @include respond('max',$mobile){
+      max-width: none;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: rem(10);
+    left: rem(10);
+    background: var(--color-green);
+    color: var(--color-light);
+    font-size: rem(12);
+    padding: rem(4) rem(8);
+    border-radius: rem(5);
+    font-weight: bold;
+  }
+
+  &__icons {
+    position: absolute;
+    top: rem(10);
+    right: rem(10);
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
+  &__icon {
+    background: var(--color-light);
+    border: none;
+    border-radius: 50%;
+    width: rem(32);
+    height: rem(32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(16);
+    box-shadow: 0 rem(2) rem(5) rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s;
+
+    @include hover {
+      background: #eee;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: rem(calculate(250));
+    background-color: #f8f8f8;
+    border-radius: rem(5);
+
+    @include respond('max', $laptop) {
+      height: rem(250);
+    }
+
+    @include hover {
+      .product__overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: var(--color-light);
+    text-align: center;
+    padding: rem(10) 0;
+    font-weight: 500;
+    font-size: rem(14);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    border-bottom-left-radius: rem(5);
+    border-bottom-right-radius: rem(5);
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+    max-width: rem(calculate(200));
+    width: 100%;
+
+    @include respond('max', $laptop) {
+      max-width: rem(200);
+    }
+  }
+
+  &__title {
+    @include fluid-text(calculate(16), 16);
+    font-weight: 500;
+  }
+
+  &__price {
+    @include fluid-text(calculate(16), 16);
+    display: flex;
+    column-gap: rem(calculate(12));
+    color: var(--color-red);
+    font-weight: 500;
+
+    @include respond('max', $laptop) {
+      column-gap: rem(12);
+    }
+  }
+
+  &__discount {
+    color: var(--color-grey);
+  }
+
+  &__stars {
+    display: flex;
+    column-gap: rem(5);
+  }
+
+  &__comments {
+    margin-left: rem(calculate(10));
+
+    @include respond('max', $laptop) {
+      margin-left: rem(10);
+    }
+  }
+}

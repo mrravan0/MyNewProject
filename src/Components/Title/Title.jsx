@@ -7,7 +7,7 @@ const Title = ({ textList, subject }) => {
                     <div className="title__right"></div>
                     <p className="title__title">{textList[0]}</p>
                 </div>
-                <div className="title__description">{textList[1]}</div>
+                <p className="title__description">{textList[1]}</p>
             </div>
             {subject}
         </div>

@@ -7,25 +7,24 @@ export const DataProvider = ({ children }) => {
     const [fakeData, setFakeData] = useState(
         [
             {
+                id: 0,
                 image: photo1,
                 price: 650,
-                text: 'LCD Monitor'
+                text: 'LCD Monitor',
+                quantity: 1,
+                subtotal: 650,
             },
             {
+                id:1,
                 text: 'H1 Gamepad',
                 price: 550,
-                image: photo2
+                image: photo2,
+                quantity: 1,
+                subtotal: 550,
             }
         ]
     )
-    console.log(fakeData);
-    
 
-    // useEffect(() => {
-    //     const newResult = information.price * counter;
-    //     setResult(newResult);
-    //     setTotal(prevTotal => (prevTotal || 0) + newResult);
-    // }, [information.price, counter]);
 
     return (
         <DataContext.Provider value={{ total, setTotal, fakeData ,setFakeData}}>

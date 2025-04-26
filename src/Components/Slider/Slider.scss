@@ -1,0 +1,26 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.slider {
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+
+    @include respond('max', $mobile-s) {
+        justify-content: space-between;
+        width: 100%;
+    }
+    &__button {
+        @include square(rem(calculate(46)));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(245, 245, 245);
+        border-radius: 50%;
+        cursor: pointer;
+
+        @include respond('max', $laptop) {
+            @include square(rem(46));
+        }
+
+    }
+}

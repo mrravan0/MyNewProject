@@ -1,0 +1,22 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.sales {
+    padding-block: rem(140);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(40);
+    }
+
+    &__group {
+        display: flex;
+        justify-content: space-between;
+        column-gap: rem(30);
+
+        @include respond('max', $mobile) {
+            flex-direction: column;
+            row-gap: rem(50);
+        }
+    }
+}
