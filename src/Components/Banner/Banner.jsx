@@ -2,7 +2,6 @@ import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
-import useSWR from "swr";
 import { useSliderTrigger } from "../sliderTrigger.js";
 import { useSliderData } from "../sliderTrigger.js";
 import ArrowToRight from "../../Assets/Svg/ArrowToRight";
@@ -11,7 +10,7 @@ import photo3 from "../../Assets/Images/Hero/photo3.png";
 import "./Banner.scss";
 
 const Banner = () => {
-  const { isOpen, handleOpen } = useSliderTrigger();
+  const { handleOpen } = useSliderTrigger();
   const { setData } = useSliderData();
   let data = [
     {
@@ -60,7 +59,7 @@ const Banner = () => {
                 <button
                   className="banner__shopNow-title"
                   onClick={() => {
-                    // setData();
+                    setData();
                     handleOpen();
                   }}
                 >
