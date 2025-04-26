@@ -1,0 +1,27 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.checkOut {
+    padding-block: rem(80) rem(140);
+
+    &__wrapper,
+    &__form,
+    &__left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__wrapper {
+        row-gap: rem(80);
+    }
+
+    &__group {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 3rem;
+
+        @include respond('max', $mobile) {
+            flex-direction: column;
+            row-gap: rem(50);
+        }
+    }
+}

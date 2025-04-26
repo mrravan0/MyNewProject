@@ -1,0 +1,51 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.checkOut {
+    &__left {
+        row-gap: rem(24);
+        max-width: rem(calculate(470));
+        width: 100%;
+
+        @include respond('max', $laptop) {
+            max-width: rem(470);
+        }
+
+        @include respond("max", $mobile) {
+            max-width: none;
+        }
+
+        &-title {
+            @include fluid-text(calculate(36), 25);
+            font-weight: 500;
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__form {
+        row-gap: rem(32);
+    }
+
+    &__save {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+
+        &-information {
+            @include square(rem(calculate(24)));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-grey);
+            border-radius: rem(5);
+            cursor: pointer;
+
+            @include respond('max', $laptop) {
+                @include square(rem(24));
+            }
+        }
+
+        .is-checked {
+            background-color: var(--color-red);
+        }
+    }
+}

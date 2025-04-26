@@ -1,0 +1,74 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.customers {
+
+    &__card,
+    &__content,
+    &__texts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card {
+        max-width: rem(calculate(370));
+        width: 100%;
+        border-radius: rem(5);
+        row-gap: rem(32);
+
+        &-top {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            background-color: rgb(245, 245, 245);
+            width: 100%;
+
+            @include respond('min', $laptop-s) {
+                min-height: rem(400);
+            }
+        }
+
+        @include respond('max', $laptop) {
+            max-width: rem(370);
+        }
+
+
+        @include respond('max', $laptop-s) {
+            max-width: none;
+        }
+    }
+
+
+    &__content {
+        row-gap: rem(16);
+
+        @include respond('max', $laptop-s) {
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    &__texts {
+        row-gap: rem(8);
+    }
+
+    &__title {
+        @include fluid-text(calculate(32), 20);
+        font-weight: 500;
+    }
+
+    &__subtitle {
+        @include fluid-text(calculate(16), 16);
+    }
+
+    &__soc1als {
+        display: flex;
+        align-items: center;
+        column-gap: rem(16);
+
+        &-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.activities {
+    padding-block: rem(140);
+
+    @include respond("max", $laptop-s) {
+        padding-top: rem(70);
+    }
+
+    @include respond("max", $tablet) {
+        padding-top: 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 1rem;
+
+        @include respond('max', $tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: rem(50);
+        }
+
+        @include respond('max', $mobile-s) {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        .infoCard {
+            transition-duration: var(--transition-duration);
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid var(--color-grey);
+            border-radius: rem(5);
+            padding-block: rem(30);
+            max-width: rem(calculate(270));
+            width: 100%;
+
+            @include hover {
+                background-color: var(--color-red);
+                color: var(--color-light);
+
+                .infoCard__content {
+                    background-color: rgb(235, 162, 162);
+                }
+
+                .infoCard__inner {
+                    background-color: var(--color-light);
+                }
+
+                path {
+                    stroke: black;
+                }
+            }
+
+            @include respond('max', $laptop) {
+                max-width: rem(270);
+            }
+
+            @include respond('max', $tablet) {
+                max-width: none;
+            }
+
+            &__title {
+                @include fluid-text(calculate(32), 20);
+            }
+
+            &__subtitle {
+                @include fluid-text(calculate(16), 16);
+            }
+        }
+    }
+}

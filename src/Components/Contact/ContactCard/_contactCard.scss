@@ -1,0 +1,46 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.contact {
+
+    &__card,
+    &__texts {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card {
+        row-gap: rem(24);
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        column-gap: rem(16);
+
+        &-group {
+            @include square(rem(calculate(40)));
+            background-color: var(--color-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            @include respond('max', $laptop) {
+                @include square(rem(40));
+            }
+        }
+    }
+
+    &__title {
+        @include fluid-text(calculate(16), 16);
+        font-weight: 500;
+    }
+
+    &__texts {
+        row-gap: rem(16);
+    }
+
+    &__description {
+        @include fluid-text(calculate(14), 16);
+    }
+}

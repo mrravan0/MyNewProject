@@ -1,0 +1,20 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.checkOut {
+    &__form {
+        &-content {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(10);
+        }
+
+        &-title {
+            @include fluid-text(calculate(16), 16);
+            color: var(--color-grey);
+        }
+    }
+
+    &__required {
+        color: var(--color-red);
+    }
+}

@@ -1,0 +1,27 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.input,
+.textArea {
+    padding: rem(13) rem(16);
+    border: none;
+    outline: none;
+    background-color: rgb(245, 245, 245);
+    @include fluid-text(calculate(16), 16);
+
+}
+
+.input {
+    width: 100%;
+
+    &::placeholder {
+        color: var(--color-grey);
+    }
+}
+
+.textArea {
+
+    &::placeholder {
+        color: var(--color-grey);
+    }
+    height: 100%;
+}

@@ -1,13 +1,13 @@
 import { Fragment, memo } from "react";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
-import phono1 from '../../Assets/Images/bgPhone.png';
+import photo1 from '../../Assets/Images/Login/bgPhone.png';
 import './_sign.scss';
 const Sign = memo(({ card, status = true }) => {
     return (
         <section className="signUp">
             <div className="signUp__wrapper">
-                <img className="signUp__image" src={phono1} alt="" />
+                <img className="signUp__image" src={photo1} alt="" />
                 <div className="signUp__inner">
                     {card}
                     {status ?
