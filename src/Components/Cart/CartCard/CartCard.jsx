@@ -1,29 +1,32 @@
-import { Fragment, memo, useContext, useEffect, useState } from 'react';
+import { Fragment, memo, useContext } from 'react';
 import ArrowDown from '../../../Assets/Svg/ArrowDown';
 import ArrowUp from '../../../Assets/Svg/ArrowUp';
 import { DataContext } from '../../../Context/Context';
 import './_cartCard.scss';
+
 const CartCard = memo(({ information, status = false, array }) => {
-    const { total, setTotal, setFakeData } = useContext(DataContext);
-    const [counter, setCounter] = useState(1);
-    const [result, setResult] = useState(information.price);
+    const { setFakeData, setTotal } = useContext(DataContext);
 
-    // useEffect(() => {
-    //     let allSummary = total + result;
-    //     setTotal(allSummary)
-    // }, [result])
-
-
-    useEffect(() => {
-        let newArray = [...array].map(item => {
-
-            item.price = item.price * counter
+    const updateQuantity = (newQuantity) => {
+        const updatedData = array.map(item => {
+            if (item.id === information.id) {
+                const updatedItem = {
+                    ...item,
+                    quantity: newQuantity,
+                    subtotal: item.price * newQuantity
+                };
+                return updatedItem;
+            }
             return item;
-        })
-        setFakeData(newArray)
-        let newResult = information.price * counter;
-        setResult(newResult)
-    }, [counter])
+        });
+
+        setFakeData(updatedData);
+
+        const newTotal = updatedData.reduce((sum, item) => {
+            return sum + (item.subtotal ?? (item.price * (item.quantity ?? 1)));
+        }, 0);
+        setTotal(newTotal);
+    };
 
     return (
         <div className="cart__card">
@@ -42,16 +45,19 @@ const CartCard = memo(({ information, status = false, array }) => {
                         <input
                             className='cart__input cart__description'
                             type="number"
-                            value={counter}
-                            onChange={(e) => setCounter(Number(e.target.value))} />
+                            min={1}
+                            value={information.quantity ?? 1}
+                            onChange={(e) => {
+                                const value = Math.max(1, Number(e.target.value));
+                                updateQuantity(value);
+                            }}
+                        />
                         <div className="cart__arrows">
                             <ArrowUp
                                 features={{
                                     width: '16',
                                     height: '16',
-                                    onClick: () => {
-                                        setCounter(counter + 1)
-                                    }
+                                    onClick: () => updateQuantity((information.quantity ?? 1) + 1)
                                 }}
                             />
                             <ArrowDown
@@ -59,14 +65,18 @@ const CartCard = memo(({ information, status = false, array }) => {
                                 features={{
                                     width: '16',
                                     height: '16',
-                                    onClick: () => counter > 1 && setCounter(counter - 1)
-                                }} />
+                                    onClick: () => updateQuantity(Math.max(1, (information.quantity ?? 1) - 1))
+                                }}
+                            />
                         </div>
                     </div>
-                    <p className="cart__description">${result}</p>
+                    <p className="cart__description">
+                        ${information.subtotal ?? (information.price * (information.quantity ?? 1))}
+                    </p>
                 </Fragment>
             }
         </div>
     )
-})
+});
+
 export default CartCard;

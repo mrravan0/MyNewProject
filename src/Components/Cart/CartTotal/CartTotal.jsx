@@ -4,7 +4,6 @@ import { DataContext } from '../../../Context/Context';
 import './_cartTotal.scss';
 const CartTotal = () => {
     const { total } = useContext(DataContext);
-    console.log(total);
 
     return (
         <Fragment>
