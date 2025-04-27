@@ -1,0 +1,43 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+.details {
+    &__group {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--color-grey);
+        border-radius: rem(5);
+        padding: rem(24) 0;
+
+        &-top {
+            display: flex;
+            align-items: center;
+            padding-inline: rem(16);
+            column-gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-grey);
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(8);
+        }
+
+        &-bottom {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            padding-top: 1rem;
+            padding-inline: rem(16);
+        }
+
+        &-title {
+            @include fluid-text(calculate(16), 16);
+            font-weight: 500;
+        }
+
+        &-subtitle {
+            @include fluid-text(calculate(12), 14);
+            font-weight: 500;
+        }
+    }
+}

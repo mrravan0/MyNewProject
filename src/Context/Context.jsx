@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import photo1 from '../Assets/Images/Cart/photo1.png'
 import photo2 from '../Assets/Images/Cart/photo2.png'
 export const DataContext = createContext();
@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
                 subtotal: 650,
             },
             {
-                id:1,
+                id: 1,
                 text: 'H1 Gamepad',
                 price: 550,
                 image: photo2,
@@ -25,9 +25,15 @@ export const DataProvider = ({ children }) => {
         ]
     )
 
+    useEffect(() => {
+        const newTotal = fakeData.reduce((sum, item) => {
+            return sum + (item.subtotal ?? (item.price * (item.quantity ?? 1)));
+        }, 0);
+        setTotal(newTotal);
+    }, [])
 
     return (
-        <DataContext.Provider value={{ total, setTotal, fakeData ,setFakeData}}>
+        <DataContext.Provider value={{ total, setTotal, fakeData, setFakeData }}>
             {children}
         </DataContext.Provider>
     );

@@ -29,7 +29,10 @@ const ProductCard = ({ features, isNew, isWishlistIcon }) => {
         <p className="product__title">{features.title}</p>
         <p className="product__price">
           ${features.price}
-          <span className="product__discount">${features.oldPrice}</span>
+          {
+            features.oldPrice &&
+            <span className="product__discount">${features.oldPrice}</span>
+          }
         </p>
         <div className="product__stars">
           <Star />

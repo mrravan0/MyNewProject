@@ -1,12 +1,12 @@
 @use '../../Scss-Sass/Helpers/' as *;
 
-.sales {
-    padding-bottom: rem(140);
+.selling {
+    padding-block: rem(140);
 
     &__wrapper {
         display: flex;
         flex-direction: column;
-        row-gap: rem(40);
+        row-gap: rem(60);
     }
 
     &__group {
@@ -17,6 +17,15 @@
         @include respond('max', $mobile) {
             flex-direction: column;
             row-gap: rem(50);
+        }
+    }
+
+    .button {
+        max-width: rem(calculate(160));
+        width: 100%;
+
+        @include respond('max', $laptop) {
+            max-width: rem(160);
         }
     }
 }
