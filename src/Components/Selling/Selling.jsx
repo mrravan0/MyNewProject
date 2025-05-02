@@ -12,25 +12,29 @@ const Selling = () => {
             image: photo1,
             title: 'The north coat',
             price: 260,
-            oldPrice: 360
+            oldPrice: 360,
+            isWishList: true
         },
         {
             image: photo2,
             title: 'Gucci duffle bag',
             price: 960,
-            oldPrice: 1160
+            oldPrice: 1160,
+            isWishList: true
         },
         {
             image: photo3,
             title: 'RGB liquid CPU Cooler',
             price: 160,
-            oldPrice: 170
+            oldPrice: 170,
+            isWishList: true
         },
         {
             image: photo4,
             title: 'Small BookSelf',
             price: 360,
-        },
+            isWishList: true
+        }
     ]
     return (
         <section className='selling'>

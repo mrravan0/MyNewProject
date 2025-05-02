@@ -11,9 +11,7 @@ const CheckOut = () => {
             <div className="checkOut__inner container">
                 <div className="checkOut__wrapper">
                     <PageInfo
-                        textList={
-                            ['Account', 'My Account', 'Product', 'View Cart', 'CheckOut']
-                        } />
+                        textList={['Account', 'My Account', 'Product', 'View Cart', 'CheckOut']} />
                     <div className="checkOut__group">
                         <CheckOutLeft />
                         <CheckOutRight data={fakeData} />

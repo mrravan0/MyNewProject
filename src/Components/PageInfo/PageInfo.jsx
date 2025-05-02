@@ -3,7 +3,7 @@ const PageInfo = ({ textList }) => {
     return (
         <div className="pageInfo">
             {
-                textList.map((item, index, arr) => (
+                textList?.map((item, index, arr) => (
                     index !== arr.length - 1 ?
                         <p key={index + 'product'} className='pageInfo__description'>
                             {item}

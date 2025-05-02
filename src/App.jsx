@@ -12,11 +12,7 @@ import Cart from './Components/Cart/Cart';
 import Details from './Components/Details/Details';
 import CheckOut from './Components/CheckOut/CheckOut';
 import Account from './Components/Account/Account';
-import photo1 from './Assets/Images/Details/photo1.png';
-import photo2 from './Assets/Images/Details/photo2.png';
-import photo3 from './Assets/Images/Details/photo3.png';
-import photo4 from './Assets/Images/Details/photo4.png';
-import photo5 from './Assets/Images/Details/photo5.png';
+import WhishList from './Components/WhishList/WhishList';
 function App() {
   const location = useLocation();
   const status = location.pathname !== '/signUp' && location.pathname !== '/login';
@@ -34,19 +30,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/checkOut' element={<CheckOut />} />
           <Route path='/cart' element={<Cart />} />
-          <Route
-            path='/productDetails'
-            element={
-              <Details
-                images={
-                  [photo1, photo2, photo3, photo4, photo5]
-                }
-                texts={
-                  ['Havic HV G-92 Gamepad',
-                    'PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.'
-                  ]
-                }
-                price={'$192.00'} />} />
+          <Route path='/productDetails' element={<Details />} />
+          <Route path='/whishList' element={<WhishList />} />
         </Routes>
       </DataProvider>
       <Footer />

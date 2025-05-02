@@ -50,7 +50,7 @@ const DetailsBottom = () => {
                             +
                         </button>
                     </div>
-                    <Button text={'Buy now'} />
+                    <Button text={'Buy now'} to={'/cart'} />
                     <button className="details__like" onClick={() => setIsLiked(!isLiked)}>
                         <HeartIcon color={isLiked ? 'red' : ''} />
                     </button>

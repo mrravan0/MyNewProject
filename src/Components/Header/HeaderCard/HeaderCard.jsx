@@ -52,11 +52,15 @@ const HeaderCard = memo(({ status, userSelect }) => {
             {status && (
                 <div className="header__content-baskets">
                     <div className="header__liked">
-                        <HeartIcon />
+                        <Link to={'/whishList'}>
+                            <HeartIcon />
+                        </Link>
                         <div className="header__like">4</div>
                     </div>
                     <div className="header__liked">
-                        <Cart />
+                        <Link to={'/whishList'}>
+                            <Cart />
+                        </Link>
                         <div className="header__like">4</div>
                     </div>
                     <div

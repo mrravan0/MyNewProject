@@ -12,25 +12,29 @@ const Sales = () => {
             title: 'HAVIT HV-G92 Gamepad',
             price: 120,
             oldPrice: 160,
-            image: photo1
+            image: photo1,
+            isWishList: true
         },
         {
             title: 'AK-900 Wired Keyboard',
             price: 960,
             oldPrice: 1160,
-            image: photo2
+            image: photo2,
+            isWishList: true
         },
         {
             title: 'IPS LCD Gaming Monitor',
             price: 380,
             oldPrice: 460,
-            image: photo3
+            image: photo3,
+            isWishList: true
         },
         {
             title: 'S-Series Comfort Chair ',
             price: 375,
             oldPrice: 400,
-            image: photo4
+            image: photo4,
+            isWishList: true
         },
     ]
     return (

@@ -6,10 +6,9 @@ const DetailsTextInfo = ({ textList, price }) => {
         <div className="details__right">
             <div className="details__top">
                 <div className="details__top-wrapper">
-                    <p className="details__top-title">{textList[0]}</p>
+                    <p className="details__top-title">{textList}</p>
                     <div className="details__top-score">
                         <div className="details__stars">
-                            <Star />
                             <Star />
                             <Star />
                             <Star />
@@ -18,9 +17,9 @@ const DetailsTextInfo = ({ textList, price }) => {
                         <p className="details__reviews">(150 Reviews)</p>
                         <p className="details__top-description">In Stock</p>
                     </div>
-                    <p className="details__price">{price}</p>
+                    <p className="details__price">${price}</p>
                 </div>
-                <p className="details__description">{textList[1]}</p>
+                <p className="details__description">{textList}</p>
             </div>
             <DetailsBottom />
         </div>

@@ -1,23 +1,26 @@
+import { useNavigate } from 'react-router-dom';
 import Star from '../../Assets/Svg/Star';
+import Eye from '../../Assets/Svg/Eye';
+import HeartIcon from '../../Assets/Svg/HeartIcon';
 import "./ProductCard.scss";
 
-const ProductCard = ({ features, isNew, isWishlistIcon }) => {
+const ProductCard = ({ features, rating = true }) => {
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/productDetails`, { state: features });
+  }
   return (
-    <div className="product__card">
+    <div className="product__card" onClick={() => handleClick()}>
       <div className="product__content">
-        {isNew && <div className="product__badge">NEW</div>}
+        {features.isNew && <div className="product__badge">NEW</div>}
         <div className="product__icons">
-          {isWishlistIcon && (
+          {features.isWishList && (
             <button className="product__icon">
-              <span role="img" aria-label="like">
-                🤍
-              </span>
+              <HeartIcon width='24' height='24' />
             </button>
           )}
           <button className="product__icon">
-            <span role="img" aria-label="view">
-              👁️
-            </span>
+            <Eye />
           </button>
         </div>
         <img src={features.image} alt="Product" className="product__image" />
@@ -34,14 +37,17 @@ const ProductCard = ({ features, isNew, isWishlistIcon }) => {
             <span className="product__discount">${features.oldPrice}</span>
           }
         </p>
-        <div className="product__stars">
-          <Star />
-          <Star />
-          <Star />
-          <Star />
-          <Star />
-          <p className="product__comments">(88)</p>
-        </div>
+        {
+          rating &&
+          <div className="product__stars">
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <p className="product__comments">(88)</p>
+          </div>
+        }
       </div>
     </div>
   );

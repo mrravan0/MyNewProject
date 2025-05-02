@@ -1,0 +1,11 @@
+@use '../../Scss-Sass/Helpers/' as *;
+
+.whishList {
+    padding-block: rem(80) rem(140);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(80);
+    }
+}

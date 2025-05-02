@@ -1,0 +1,58 @@
+@use '../../../Scss-Sass/Helpers/' as *;
+
+.whishList {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(60);
+    }
+
+    &__group {
+        display: flex;
+        justify-content: space-between;
+
+        @include respond('max', $laptop-s) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(40);
+        }
+
+        @include respond('max', $mobile-s) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .title {
+        flex-direction: row;
+
+        &__title {
+            color: var(--color-dark);
+            font-weight: 400;
+        }
+    }
+
+    .product__card {
+        @include respond('max', $laptop-s) {
+            max-width: none;
+        }
+    }
+
+    .button {
+        max-width: rem(calculate(230));
+        width: 100%;
+        background-color: transparent;
+        border: rem(1) solid var(--color-grey);
+        border-radius: rem(5);
+        color: var(--color-dark);
+
+        @include hover {
+            background-color: var(--color-red);
+            color: var(--color-light);
+            transition-duration: var(--transition-duration);
+        }
+
+        @include respond('max', $laptop) {
+            max-width: rem(230);
+        }
+    }
+}

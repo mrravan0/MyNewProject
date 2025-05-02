@@ -23,13 +23,15 @@
 
     &__content {
         display: flex;
+        align-items: center;
         column-gap: rem(20);
     }
 
-    &__right {
+    &__left {
         width: rem(20);
         height: rem(40);
         background-color: var(--color-red);
+        border-radius: rem(5)
     }
 
     &__title {

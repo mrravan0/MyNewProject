@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: space-between;
     row-gap: rem(16);
-    max-width: rem(calculate(250));
+    max-width: rem(calculate(270));
     width: 100%;
     background: transparent;
     border-radius: rem(4);
@@ -14,7 +14,7 @@
     cursor: pointer;
 
     @include respond('max', $laptop) {
-      max-width: rem(250);
+      max-width: rem(270);
     }
 
     @include respond('max',$mobile){
@@ -132,6 +132,7 @@
 
   &__discount {
     color: var(--color-grey);
+    text-decoration: line-through;
   }
 
   &__stars {

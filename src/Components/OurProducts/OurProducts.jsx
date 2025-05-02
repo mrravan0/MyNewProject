@@ -12,41 +12,49 @@ const OurProducts = () => {
             image: photo1,
             title: 'Breed Dry Dog Food',
             price: 100,
+            isWishList: true
         },
         {
             image: photo2,
             title: 'CANON EOS DSLR Camera',
             price: 360,
+            isWishList: true
         },
         {
             image: photo3,
             title: 'ASUS FHD Gaming Laptop',
             price: 220,
+            isWishList: true
         },
         {
             image: photo4,
             title: 'Curology Product Set ',
             price: 500,
+            isWishList: true
         },
         {
             image: photo1,
             title: 'Breed Dry Dog Food',
             price: 100,
+            isWishList: true
         },
         {
             image: photo2,
             title: 'CANON EOS DSLR Camera',
             price: 360,
+            isWishList: true
         },
         {
             image: photo3,
             title: 'ASUS FHD Gaming Laptop',
             price: 220,
+            isWishList: true
         },
         {
             image: photo4,
             title: 'Curology Product Set ',
             price: 500,
+            isWishList: true
         },
     ]
     return (
