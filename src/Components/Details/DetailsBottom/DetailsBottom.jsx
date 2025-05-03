@@ -1,13 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from '../../Button/Button';
 import HeartIcon from '../../../Assets/Svg/HeartIcon';
 import DetailsGroup from "../DetailsGroup/DetailsGroup";
 import './_detailsBottom.scss'
-const DetailsBottom = () => {
-    const [count, setCount] = useState(0);
+const DetailsBottom = (features) => {
+    const [count, setCount] = useState(1);
     const [isLiked, setIsLiked] = useState(false);
     const [selectedSize, setSelectedSize] = useState('M');
     const sizes = ["XS", "S", "M", "L", "XL"];
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/checkOut', { state: { ...features, count: count } })
+    }
     return (
         <div className="details__bottom">
             <div className="details__bottom-wrapper">
@@ -50,7 +55,7 @@ const DetailsBottom = () => {
                             +
                         </button>
                     </div>
-                    <Button text={'Buy now'} to={'/cart'} />
+                    <button onClick={handleClick}>Buy now</button>
                     <button className="details__like" onClick={() => setIsLiked(!isLiked)}>
                         <HeartIcon color={isLiked ? 'red' : ''} />
                     </button>

@@ -1,11 +1,14 @@
-import { useContext } from 'react';
+import { memo, useContext } from 'react';
 import PageInfo from '../PageInfo/PageInfo';
 import CheckOutLeft from './CheckOutLeft/CheckOutLeft';
 import CheckOutRight from './CheckOutRight/CheckOutRight';
 import { DataContext } from '../../Context/Context';
 import './_checkOut.scss';
-const CheckOut = () => {
+import { useLocation } from 'react-router-dom';
+const CheckOut = memo(() => {
     const { fakeData } = useContext(DataContext);
+    const location1 = useLocation();
+    console.log(location1);
     return (
         <section className='checkOut'>
             <div className="checkOut__inner container">
@@ -20,6 +23,6 @@ const CheckOut = () => {
             </div>
         </section>
     )
-}
+})
 
 export default CheckOut;

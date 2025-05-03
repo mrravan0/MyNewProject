@@ -1,12 +1,13 @@
 import Star from '../../../Assets/Svg/Star';
 import DetailsBottom from '../DetailsBottom/DetailsBottom';
 import './_detailsTextInfo.scss';
-const DetailsTextInfo = ({ textList, price }) => {
+const DetailsTextInfo = (features) => {
+    let { title, price } = features;
     return (
         <div className="details__right">
             <div className="details__top">
                 <div className="details__top-wrapper">
-                    <p className="details__top-title">{textList}</p>
+                    <p className="details__top-title">{title}</p>
                     <div className="details__top-score">
                         <div className="details__stars">
                             <Star />
@@ -19,9 +20,9 @@ const DetailsTextInfo = ({ textList, price }) => {
                     </div>
                     <p className="details__price">${price}</p>
                 </div>
-                <p className="details__description">{textList}</p>
+                <p className="details__description">{title}</p>
             </div>
-            <DetailsBottom />
+            <DetailsBottom {...features} />
         </div>
     )
 }
